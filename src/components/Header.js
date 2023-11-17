@@ -15,7 +15,7 @@ function Header() {
       </div>
 
       <div className="cart-widget">
-        Cart
+        Account
       </div>
     </header>
   );

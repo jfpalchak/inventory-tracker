@@ -24,10 +24,11 @@ class CoffeeControl extends React.Component {
   }
 
   // handle click event to return to coffee list from coffee detail component
-  // reset currentCoffee state to null & editing state to false
+  // if editing is true, only reset editing state to false,
+  // otherwise reset currentCoffee state to null & return to coffee list
   handleDetailClick = () => {
     this.setState({
-      currentCoffee: null,
+      currentCoffee: this.state.editing ? this.state.currentCoffee : null, // return to detail if editing, otherwise return to list
       editing: false
     });
   }
@@ -42,7 +43,7 @@ class CoffeeControl extends React.Component {
   // handle submission of new coffee form and add new coffee to inventory list,
   // then reset formVisible state to false and return to coffee list
   // @param new coffee object to be added to inventory list
-  handleAddNewCoffee = (newCoffee) => {
+  handleAddingNewCoffee = (newCoffee) => {
     const updatedInventory = this.state.mainInventory.concat(newCoffee);
     this.setState({
       mainInventory: updatedInventory,
@@ -74,6 +75,26 @@ class CoffeeControl extends React.Component {
     });
   }
 
+  // handle selling the selected coffee and decrementing from the quantity
+  // update the mainInventory state with the updated coffee and it's new quantity
+  handleSellingCoffee = () => {
+    const coffeeQuantity = this.state.currentCoffee.quantity;
+
+    const updatedCurrentCoffee = {
+      ...this.state.currentCoffee,
+      quantity: (coffeeQuantity === 0) ? 0 : coffeeQuantity - 1 // if quantity is 0, keep it at 0, otherwise decrement by 1
+    };
+
+    const updatedInventory = this.state.mainInventory
+      .filter(coffee => coffee.id !== this.state.currentCoffee.id)
+      .concat(updatedCurrentCoffee);
+
+    this.setState({
+      mainInventory: updatedInventory,
+      currentCoffee: updatedCurrentCoffee
+    });
+  }
+
   render() {
 
     // CSS Object
@@ -102,7 +123,7 @@ class CoffeeControl extends React.Component {
       buttonHandler = this.handleDetailClick;
     } else if (this.state.formVisible) {
       visibleComponent = <NewCoffeeForm 
-                            onNewCoffeeSubmission={this.handleAddNewCoffee}/>;
+                            onNewCoffeeSubmission={this.handleAddingNewCoffee}/>;
       buttonText = "Cancel";
     } else {
       visibleComponent = <CoffeeList 
@@ -114,9 +135,10 @@ class CoffeeControl extends React.Component {
     return (
       <React.Fragment>
         <main style={mainStyling}>
-          {visibleComponent}
 
+          {visibleComponent}
           <button onClick={buttonHandler}>{buttonText}</button>
+
         </main>
       </React.Fragment>
     );
