@@ -4,9 +4,16 @@ import PropTypes from "prop-types";
 
 function CoffeeList(props) {
 
+  const listStyling = {
+    width: "100%",
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-evenly"
+  };
+
   return(
     <React.Fragment>
-      <section className="coffee-list">
+      <section className="coffee-list" style={listStyling}>
         {props.inventory.map((bean) => 
             <Coffee 
               name={bean.name}

@@ -33,6 +33,13 @@ class CoffeeControl extends React.Component {
   }
 
   render() {
+
+    const mainStyling = {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center"
+    };
+
     let buttonText = null;
     let visibleComponent = null;
 
@@ -48,7 +55,7 @@ class CoffeeControl extends React.Component {
 
     return (
       <React.Fragment>
-        <main>
+        <main style={mainStyling}>
           {visibleComponent}
 
           <button onClick={this.handleFormClick}>{buttonText}</button>
