@@ -1,12 +1,26 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function Coffee() {
+function Coffee(props) {
   
   return (
     <React.Fragment>
-
+      <h3>{props.name}</h3>
+      <h4>{props.origin}</h4>
+      <h5>{props.roast}</h5>
+      <h5>{props.price}</h5>
+      <h5>{props.quantity}</h5>
     </React.Fragment>
   );
 }
+
+Coffee.propTypes = {
+  name: PropTypes.string,
+  origin: PropTypes.string,
+  roast: PropTypes.string,
+  price: PropTypes.number,
+  quantity: PropTypes.number,
+  id: PropTypes.string
+};
 
 export default Coffee;
