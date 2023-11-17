@@ -6,29 +6,33 @@ function ReusableForm(props) {
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
-        <label>Name: </label>
+        <label htmlFor="name">Name: </label>
         <input 
           type="text"
           name="name"
+          id="name"
           placeholder="Enter name of coffee."
         />
-        <label>Origin: </label>
+        <label htmlFor="origin">Origin: </label>
         <input 
           type="text"
           name="origin"
+          id="origin"
           placeholder="Enter origin of coffee."
         />
         {/* Change this to dropdown selection? */}
-        <label>Roast: </label>
+        <label htmlFor="roast">Roast: </label>
         <input 
           type="text"
           name="roast"
+          id="roast"
           placeholder="Enter roast of coffee."
         />
-        <label>Price: </label>
+        <label htmlFor="price">Price: </label>
         <input 
           type="text"
           name="price"
+          id="price"
           placeholder="$ 0.00"
         />
         <button type="submit">{props.buttonText}</button>
