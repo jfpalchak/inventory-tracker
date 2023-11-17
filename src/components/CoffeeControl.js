@@ -22,6 +22,14 @@ class CoffeeControl extends React.Component {
     }));
   }
 
+  // handle click event to return to coffee list from coffee detail component
+  // reset currentCoffee state to null
+  handleDetailClick = () => {
+    this.setState({
+      currentCoffee: null
+    });
+  }
+
   // handle submission of new coffee form and add new coffee to inventory list,
   // then reset formVisible state to false and return to coffee list
   // @param new coffee object to be added to inventory list
@@ -55,11 +63,13 @@ class CoffeeControl extends React.Component {
     // Conditional Rendering
     let buttonText = null;
     let visibleComponent = null;
+    let buttonHandler = this.handleFormClick;
 
     if (this.state.currentCoffee != null) {
       visibleComponent = <CoffeeDetail 
                             coffee={this.state.currentCoffee}/>
       buttonText = "Return";
+      buttonHandler = this.handleDetailClick;
     } else if (this.state.formVisible) {
       visibleComponent = <NewCoffeeForm 
                             onNewCoffeeSubmission={this.handleAddNewCoffee}/>;
@@ -76,7 +86,7 @@ class CoffeeControl extends React.Component {
         <main style={mainStyling}>
           {visibleComponent}
 
-          <button onClick={this.handleFormClick}>{buttonText}</button>
+          <button onClick={buttonHandler}>{buttonText}</button>
         </main>
       </React.Fragment>
     );
