@@ -5,11 +5,13 @@ function Coffee(props) {
   
   return (
     <React.Fragment>
-      <h3>{props.name}</h3>
-      <h4>{props.origin}</h4>
-      <h5>{props.roast}</h5>
-      <h5>{props.price}</h5>
-      <h5>{props.quantity}</h5>
+      <div className="coffee-item">
+        <h3>{props.name}</h3>
+        <h4>{props.origin}</h4>
+        <h5>{props.roast}</h5>
+        <h5>{props.price}</h5>
+        <h5>{props.quantity}</h5>
+      </div>
     </React.Fragment>
   );
 }

@@ -48,9 +48,11 @@ class CoffeeControl extends React.Component {
 
     return (
       <React.Fragment>
-        {visibleComponent}
+        <main>
+          {visibleComponent}
 
-        <button onClick={this.handleFormClick}>{buttonText}</button>
+          <button onClick={this.handleFormClick}>{buttonText}</button>
+        </main>
       </React.Fragment>
     );
   }
