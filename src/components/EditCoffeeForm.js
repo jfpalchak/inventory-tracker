@@ -20,11 +20,13 @@ function EditCoffeeForm(props) {
   }
   return (
     <React.Fragment>
-      <h4>Edit {coffee.name}</h4>
-      <ReusableForm 
-        formSubmissionHandler={handleFormSubmission}
-        buttonText="Update"
-      />
+      <section className="form-component">
+        <h4>Edit {coffee.name}</h4>
+        <ReusableForm 
+          formSubmissionHandler={handleFormSubmission}
+          buttonText="Update"
+        />
+      </section>
     </React.Fragment>
   );
 }

@@ -108,13 +108,6 @@ class CoffeeControl extends React.Component {
 
   render() {
 
-    // CSS Object
-    const mainStyling = {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center"
-    };
-
     // Conditional Rendering
     let buttonText = null;
     let visibleComponent = null;
@@ -147,11 +140,9 @@ class CoffeeControl extends React.Component {
 
     return (
       <React.Fragment>
-        <main style={mainStyling}>
-
-          {visibleComponent}
-          <button onClick={buttonHandler}>{buttonText}</button>
-
+        <main>
+            {visibleComponent}
+            <button onClick={buttonHandler}>{buttonText}</button>
         </main>
       </React.Fragment>
     );
