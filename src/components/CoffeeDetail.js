@@ -6,6 +6,14 @@ function CoffeeDetail(props) {
 
   const { coffee, onClickingEdit, onClickingSell } = props;
 
+  let sellButtonVisible = <button onClick={onClickingSell}>Sell</button>;
+  let quantity = coffee.quantity;
+
+  if (!coffee.quantity) {
+    sellButtonVisible = null;
+    quantity = "Out of Stock";
+  }
+
   return (
     <React.Fragment>
       <section className="selected-coffee">
@@ -15,10 +23,10 @@ function CoffeeDetail(props) {
           <h4>{coffee.origin}</h4>
           <h4>{coffee.roast}</h4>
           <h4>{coffee.price}</h4>
-          <h4>{coffee.quantity}</h4>
+          <h4>{quantity}</h4>
         </div>
 
-        <button onClick={onClickingSell}>Sell</button>
+        {sellButtonVisible}
 
         <button onClick={onClickingEdit}>Edit</button>
         <button>Remove</button>
