@@ -15,7 +15,8 @@ function CoffeeList(props) {
     <React.Fragment>
       <section className="coffee-list" style={listStyling}>
         {props.inventory.map((bean) => 
-            <Coffee 
+            <Coffee
+              onCoffeeClick={props.onCoffeeClick}
               name={bean.name}
               origin={bean.origin}
               roast={bean.roast}
@@ -31,7 +32,8 @@ function CoffeeList(props) {
 }
 
 CoffeeList.propTypes = {
-  inventory: PropTypes.array
+  inventory: PropTypes.array,
+  onCoffeeClick: PropTypes.func
 };
 
 export default CoffeeList;

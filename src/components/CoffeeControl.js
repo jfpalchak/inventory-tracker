@@ -33,6 +33,16 @@ class CoffeeControl extends React.Component {
     });
   }
 
+  // handle clicking on a specific coffee to render its details
+  // sets currentCoffee state to be the coffee object that was targeted
+  // @param id of the coffee that was clicked on
+  handleCoffeeSelection = (id) => {
+    const selectedCoffee = this.state.mainInventory.filter(coffee => coffee.id === id)[0];
+    this.setState({
+      currentCoffee: selectedCoffee
+    });
+  }
+
   render() {
 
     // CSS Object
@@ -56,6 +66,7 @@ class CoffeeControl extends React.Component {
       buttonText = "Cancel";
     } else {
       visibleComponent = <CoffeeList 
+                            onCoffeeClick={this.handleCoffeeSelection}
                             inventory={this.state.mainInventory} />;
       buttonText = "Add Coffee";
     }
