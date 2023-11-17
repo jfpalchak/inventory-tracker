@@ -65,6 +65,17 @@ class CoffeeControl extends React.Component {
     });
   }
 
+  // handle updating inventory state by filtering out the selected coffee object to be deleted,
+  // then reset currentCoffee state to null
+  handleDeletingCoffee = () => {
+    const updatedInventory = this.state.mainInventory
+      .filter(coffee => coffee.id !== this.state.currentCoffee.id);
+    this.setState({
+      mainInventory: updatedInventory,
+      currentCoffee: null
+    });
+  }
+
   // handle clicking on a specific coffee to render its details
   // sets currentCoffee state to be the coffee object that was targeted
   // @param id of the coffee that was clicked on
@@ -119,6 +130,7 @@ class CoffeeControl extends React.Component {
       visibleComponent = <CoffeeDetail 
                             onClickingSell={this.handleSellingCoffee}
                             onClickingEdit={this.handleEditClick}
+                            onClickingDelete={this.handleDeletingCoffee}
                             coffee={this.state.currentCoffee}/>
       buttonText = "Return";
       buttonHandler = this.handleDetailClick;
