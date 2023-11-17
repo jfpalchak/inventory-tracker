@@ -7,7 +7,7 @@ function CoffeeDetail(props) {
   const { coffee, onClickingEdit, onClickingSell, onClickingDelete} = props;
 
   let sellButtonVisible = <button onClick={onClickingSell}>Sell</button>;
-  let quantity = coffee.quantity;
+  let quantity = "Quantity: " + coffee.quantity + " lbs";
 
   if (!coffee.quantity) {
     sellButtonVisible = null;
@@ -19,10 +19,10 @@ function CoffeeDetail(props) {
       <section className="selected-coffee">
 
         <div className="coffee-detail">
-          <h3>{coffee.name}</h3>
-          <h4>{coffee.origin}</h4>
-          <h4>{coffee.roast}</h4>
-          <h4>{coffee.price}</h4>
+          <h3>Name: {coffee.name}</h3>
+          <h4>Origin: {coffee.origin}</h4>
+          <h4>Roast: {coffee.roast}</h4>
+          <h4>Price: ${coffee.price} / lb</h4>
           <h4>{quantity}</h4>
         </div>
 

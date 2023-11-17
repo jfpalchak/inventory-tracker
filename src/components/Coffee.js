@@ -3,10 +3,25 @@ import PropTypes from "prop-types";
 
 function Coffee(props) {
   
-  let quantity = props.quantity;
+  // CSS Objects
+  const outOfStockStyle = {
+    color: "red",
+    fontWeight: "bold"
+  };
 
-  if (!quantity) {
-    quantity = "Out of Stock";
+  const almostEmptyStyle = {
+    color: "darkorange",
+    fontWeight: "bold",
+    fontStyle: "italic"
+  };
+
+  // Conditional Rendering
+  let quantity = "In Stock";
+
+  if (!props.quantity) {
+    quantity = <span style={outOfStockStyle}>Out of Stock</span>;
+  } else if (props.quantity <= 10) {
+    quantity = <span style={almostEmptyStyle}>Almost Empty</span>;
   }
 
   return (
@@ -15,7 +30,7 @@ function Coffee(props) {
         <h3>{props.name}</h3>
         <h4>{props.origin}</h4>
         <h5>{props.roast}</h5>
-        <h5>{props.price}</h5>
+        <h5>${props.price}</h5>
         <h5>{quantity}</h5>
       </div>
     </React.Fragment>
