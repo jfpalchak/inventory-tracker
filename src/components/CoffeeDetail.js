@@ -6,11 +6,11 @@ function CoffeeDetail(props) {
 
   const { coffee, onClickingEdit, onClickingSell, onClickingDelete} = props;
 
-  let sellButtonVisible = <button onClick={onClickingSell}>Sell</button>;
   let quantity = "Quantity: " + coffee.quantity + " lbs";
+  let isOutOfStock = false;
 
   if (!coffee.quantity) {
-    sellButtonVisible = null;
+    isOutOfStock = true;
     quantity = "Out of Stock";
   }
 
@@ -26,11 +26,14 @@ function CoffeeDetail(props) {
           <h4>{quantity}</h4>
         </div>
 
-        {sellButtonVisible}
+        <div className="sell-button">
+          <button onClick={onClickingSell} disabled={isOutOfStock}>Sell</button>
+        </div>
 
-        <button onClick={onClickingEdit}>Edit</button>
-        <button onClick={onClickingDelete}>Remove</button>
-
+        <div className="crud-buttons">
+          <button onClick={onClickingEdit}>Edit</button>
+          <button onClick={onClickingDelete}>Remove</button>
+        </div>
       </section>
     </React.Fragment>
   );
