@@ -12,6 +12,7 @@ function ReusableForm(props) {
           name="name"
           id="name"
           placeholder="Enter name of coffee."
+          required={true}
         />
         <label htmlFor="origin">Origin: </label>
         <input 
@@ -19,6 +20,7 @@ function ReusableForm(props) {
           name="origin"
           id="origin"
           placeholder="Enter origin of coffee."
+          required={true}
         />
         {/* Change this to dropdown selection? */}
         <label htmlFor="roast">Roast: </label>
@@ -27,6 +29,7 @@ function ReusableForm(props) {
           name="roast"
           id="roast"
           placeholder="Enter roast of coffee."
+          required={true}
         />
         <label htmlFor="price">Price: </label>
         <input 
@@ -34,6 +37,7 @@ function ReusableForm(props) {
           name="price"
           id="price"
           placeholder="$ 0.00"
+          required={true}
         />
         <button type="submit">{props.buttonText}</button>
       </form>
