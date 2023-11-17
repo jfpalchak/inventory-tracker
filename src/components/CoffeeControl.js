@@ -1,6 +1,7 @@
 import React from "react";
 import CoffeeList from "./CoffeeList";
 import NewCoffeeForm from "./NewCoffeeForm";
+import CoffeeDetail from "./CoffeeDetail";
 import { testData } from "./test-list";
 
 class CoffeeControl extends React.Component {
@@ -34,16 +35,22 @@ class CoffeeControl extends React.Component {
 
   render() {
 
+    // CSS Object
     const mainStyling = {
       display: "flex",
       flexDirection: "column",
       alignItems: "center"
     };
 
+    // Conditional Rendering
     let buttonText = null;
     let visibleComponent = null;
 
-    if (this.state.formVisible) {
+    if (this.state.currentCoffee != null) {
+      visibleComponent = <CoffeeDetail 
+                            coffee={this.state.currentCoffee}/>
+      buttonText = "Return";
+    } else if (this.state.formVisible) {
       visibleComponent = <NewCoffeeForm 
                             onNewCoffeeSubmission={this.handleAddNewCoffee}/>;
       buttonText = "Cancel";
