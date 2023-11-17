@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { v4 } from "uuid";
 
 function NewCoffeeForm(props) {
 
@@ -6,7 +8,16 @@ function NewCoffeeForm(props) {
     event.preventDefault();
 
     // create new coffee bean item and add to list using prop method
+    props.onNewCoffeeSubmission({
+      name: event.target.name.value,
+      origin: event.target.origin.value,
+      roast: event.target.roast.value,
+      price: event.target.price.value,
+      quantity: 130,
+      id: v4()
+    });
   }
+
   return (
     <React.Fragment>
       <form onSubmit={handleFormSubmission}>
@@ -30,7 +41,7 @@ function NewCoffeeForm(props) {
         />
         <br/>
         <input 
-          type="number"
+          type="text"
           name="price"
           placeholder="Enter price of coffee bean."
         />
@@ -40,5 +51,9 @@ function NewCoffeeForm(props) {
     </React.Fragment>
   );
 }
+
+NewCoffeeForm.propTypes = {
+  onNewCoffeeSubmission: PropTypes.func
+};
 
 export default NewCoffeeForm;

@@ -21,17 +21,28 @@ class CoffeeControl extends React.Component {
     }));
   }
 
+  // handle submission of new coffee form and add new coffee to inventory list,
+  // then reset formVisible state to false and return to coffee list
+  // @param new coffee object to be added to inventory list
+  handleAddNewCoffee = (newCoffee) => {
+    const updatedInventory = this.state.mainInventory.concat(newCoffee);
+    this.setState({
+      mainInventory: updatedInventory,
+      formVisible: false
+    });
+  }
+
   render() {
     let buttonText = null;
     let visibleComponent = null;
 
     if (this.state.formVisible) {
-      visibleComponent = <NewCoffeeForm />;
+      visibleComponent = <NewCoffeeForm 
+                            onNewCoffeeSubmission={this.handleAddNewCoffee}/>;
       buttonText = "Cancel";
     } else {
       visibleComponent = <CoffeeList 
-                            inventory={this.state.mainInventory}
-                          />
+                            inventory={this.state.mainInventory} />;
       buttonText = "Add Coffee";
     }
 
