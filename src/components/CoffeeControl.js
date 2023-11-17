@@ -1,5 +1,6 @@
 import React from "react";
-import CoffeeControl from "./CoffeeControl";
+import CoffeeList from "./CoffeeList";
+import NewCoffeeForm from "./NewCoffeeForm";
 import { testData } from "./test-list";
 
 class CoffeeControl extends React.Component {
@@ -13,13 +14,32 @@ class CoffeeControl extends React.Component {
     };
   }
 
+  // handle click event to toggle whether NewCoffeeForm renders or not
+  handleFormClick = () => {
+    this.setState(prevState => ({
+      formVisible: !prevState.formVisible
+    }));
+  }
+
   render() {
+    let buttonText = null;
+    let visibleComponent = null;
+
+    if (this.state.formVisible) {
+      visibleComponent = <NewCoffeeForm />;
+      buttonText = "Cancel";
+    } else {
+      visibleComponent = <CoffeeList 
+                            inventory={this.state.mainInventory}
+                          />
+      buttonText = "Add Coffee";
+    }
 
     return (
       <React.Fragment>
-        <CoffeeList 
-          inventory={this.state.mainInventory}
-        />
+        {visibleComponent}
+
+        <button onClick={this.handleFormClick}>{buttonText}</button>
       </React.Fragment>
     );
   }
