@@ -117,6 +117,7 @@ class CoffeeControl extends React.Component {
       buttonHandler = this.handleDetailClick;
     } else if (this.state.currentCoffee != null) {
       visibleComponent = <CoffeeDetail 
+                            onClickingSell={this.handleSellingCoffee}
                             onClickingEdit={this.handleEditClick}
                             coffee={this.state.currentCoffee}/>
       buttonText = "Return";
