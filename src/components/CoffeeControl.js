@@ -2,6 +2,7 @@ import React from "react";
 import CoffeeList from "./CoffeeList";
 import NewCoffeeForm from "./NewCoffeeForm";
 import CoffeeDetail from "./CoffeeDetail";
+import EditCoffeeForm from "./EditCoffeeForm"; 
 import { testData } from "./test-list";
 
 class CoffeeControl extends React.Component {
@@ -23,10 +24,18 @@ class CoffeeControl extends React.Component {
   }
 
   // handle click event to return to coffee list from coffee detail component
-  // reset currentCoffee state to null
+  // reset currentCoffee state to null & editing state to false
   handleDetailClick = () => {
     this.setState({
-      currentCoffee: null
+      currentCoffee: null,
+      editing: false
+    });
+  }
+
+  // handle clicking edit button to render EditCoffeeForm
+  handleEditClick = () => {
+    this.setState({
+      editing: true
     });
   }
 
@@ -65,8 +74,13 @@ class CoffeeControl extends React.Component {
     let visibleComponent = null;
     let buttonHandler = this.handleFormClick;
 
-    if (this.state.currentCoffee != null) {
+    if (this.state.editing) {
+      visibleComponent = <EditCoffeeForm />
+      buttonText = "Cancel";
+      buttonHandler = this.handleDetailClick;
+    } else if (this.state.currentCoffee != null) {
       visibleComponent = <CoffeeDetail 
+                            onClickingEdit={this.handleEditClick}
                             coffee={this.state.currentCoffee}/>
       buttonText = "Return";
       buttonHandler = this.handleDetailClick;

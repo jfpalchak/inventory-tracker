@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 function CoffeeDetail(props) {
 
-  const { coffee } = props;
+  const { coffee, onClickingEdit } = props;
 
   return (
     <React.Fragment>
@@ -20,7 +20,7 @@ function CoffeeDetail(props) {
 
         <button>Buy</button>
 
-        <button>Edit</button>
+        <button onClick={onClickingEdit}>Edit</button>
         <button>Remove</button>
 
       </section>
@@ -29,7 +29,8 @@ function CoffeeDetail(props) {
 }
 
 CoffeeDetail.propTypes = {
-  coffee: PropTypes.object
+  coffee: PropTypes.object,
+  onClickingEdit: PropTypes.func
 };
 
 export default CoffeeDetail;
