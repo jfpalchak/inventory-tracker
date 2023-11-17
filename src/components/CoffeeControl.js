@@ -50,6 +50,20 @@ class CoffeeControl extends React.Component {
     });
   }
 
+  // handle updating inventory state with the updated coffee object & filter out old coffee object,
+  // then reset edit state to false and currentCoffee state to null
+  // @param updated coffee object to be added to inventory list
+  handleUpdatingCoffee = (updatedCoffee) => {
+    const updatedInventory = this.state.mainInventory
+      .filter(coffee => coffee.id !== this.state.currentCoffee.id)
+      .concat(updatedCoffee);
+    this.setState({
+      mainInventory: updatedInventory,
+      currentCoffee: null,
+      editing: false
+    });
+  }
+
   // handle clicking on a specific coffee to render its details
   // sets currentCoffee state to be the coffee object that was targeted
   // @param id of the coffee that was clicked on
@@ -75,7 +89,9 @@ class CoffeeControl extends React.Component {
     let buttonHandler = this.handleFormClick;
 
     if (this.state.editing) {
-      visibleComponent = <EditCoffeeForm />
+      visibleComponent = <EditCoffeeForm 
+                            coffee={this.state.currentCoffee}
+                            onEditCoffeeSubmission={this.handleUpdatingCoffee} />
       buttonText = "Cancel";
       buttonHandler = this.handleDetailClick;
     } else if (this.state.currentCoffee != null) {
