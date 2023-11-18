@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import beans from "./../img/beans.jpeg";
 import beans2 from "./../img/beans2.jpeg";
 
 function Coffee(props) {
