@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import beans from "./../img/beans.jpeg";
+import beans2 from "./../img/beans2.jpeg";
 
 function Coffee(props) {
   
@@ -27,11 +29,16 @@ function Coffee(props) {
   return (
     <React.Fragment>
       <div onClick={() => props.onCoffeeClick(props.id)} className="coffee-item">
-        <h3>{props.name}</h3>
-        <h4>{props.origin}</h4>
-        <h5>{props.roast}</h5>
-        <h5>${props.price}</h5>
-        <h5>{quantity}</h5>
+        <div className="coffee-banner">
+          <img src={beans2} alt="Coffee beans" />
+          <h3>{props.name}</h3>
+        </div>
+        <div className="coffee-info">
+          <h4>{props.origin}</h4>
+          <h5>{props.roast}</h5>
+          <h5>${props.price}</h5>
+          <h5>{quantity}</h5>
+        </div>
       </div>
     </React.Fragment>
   );

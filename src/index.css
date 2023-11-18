@@ -10,10 +10,16 @@ body {
 /* HEADER COMPONENT STYLES */
 header {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
   padding-left: 15px;
   padding-right: 15px;
   margin-bottom: 50px;
+}
+
+.site-logo {
+  font-size: 2em;
+  font-weight: bold;
 }
 
 nav ul{
@@ -24,19 +30,65 @@ nav ul{
   gap: 10px;
 }
 
-nav a {
-  text-decoration: none;
+nav li {
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
+}
+nav li:hover {
+  cursor: pointer;
+  border-bottom: 1px solid black;
 }
 
 /* MAIN CONTENT STYLES */
 main {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  /* background: yellow; */
 }
 
+/* COFFEE LIST STYLES */
+.coffee-item {
+  position: relative;
+  /* background: rosybrown; */
+  padding: 15px;
+  border-radius: 10px;
+  width: max(25%, 220px);
+  margin: 5px auto;
+  transition: 0.3s;
+}
 
+.coffee-item:hover {
+  transform: translateY(-1%);
+  cursor: pointer;
+}
+
+.coffee-banner {
+  position: relative;
+  display: grid;
+  /* margin-bottom: 100px; */
+}
+
+.coffee-banner img {
+  width: 100%;
+  z-index: -1;
+  position: relative;
+  /* top: 150px; */
+  border-radius: 5px;
+}
+.coffee-banner h3 {
+  position: absolute;
+  padding-left: 5px;
+  top: -12px;
+  color: white;
+  font-size: 2.7em;
+
+}
 /* FORM COMPONENT STYLES */
 .form-component h4 {
   text-align: center;
@@ -59,6 +111,9 @@ form button {
 /* DETAIL COMPONENT STYLES */
 .selected-coffee {
   margin-bottom: 15px;
+  background: rosybrown;
+  border-radius: 10px;
+  padding: 15px;
 }
 .sell-button button {
   width: 100%;
