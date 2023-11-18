@@ -6,7 +6,15 @@ function CoffeeDetail(props) {
 
   const { coffee, onClickingEdit, onClickingSell, onClickingDelete } = props;
 
-  let quantity = "Quantity: " + coffee.quantity + " lbs";
+  const handleSellingCoffee = () => {
+    const updatedCoffee = {
+      ...coffee,
+      quantity: (coffee.quantity === 0) ? 0 : coffee.quantity - 1 // if quantity is 0, keep it at 0, otherwise decrement by 1
+    };
+    onClickingSell(updatedCoffee);
+  };
+
+  let quantity = `Quantity: ${coffee.quantity} lbs`;
   let isOutOfStock = false;
 
   if (!coffee.quantity) {
@@ -27,7 +35,7 @@ function CoffeeDetail(props) {
         </div>
 
         <div className="sell-button">
-          <button className="btn btn-sell" onClick={onClickingSell} disabled={isOutOfStock}>Sell</button>
+          <button className="btn btn-sell" onClick={handleSellingCoffee} disabled={isOutOfStock}>Sell</button>
         </div>
 
         <div className="crud-buttons">
