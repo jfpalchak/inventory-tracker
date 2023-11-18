@@ -14,5 +14,13 @@ export const testData = [
     price: "21.00",
     quantity: 130,
     id: "2"
+  },
+  {
+    name: "La Primavera",
+    origin: "Colombia",
+    roast: "Dark",
+    price: "21.00",
+    quantity: 130,
+    id: "3"
   }
 ];

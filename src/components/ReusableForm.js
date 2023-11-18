@@ -22,7 +22,6 @@ function ReusableForm(props) {
           placeholder="Enter origin of coffee."
           required={true}
         />
-        {/* Change this to dropdown selection? */}
         <label htmlFor="roast">Roast: </label>
         <input 
           type="text"
@@ -39,7 +38,7 @@ function ReusableForm(props) {
           placeholder="$ 0.00"
           required={true}
         />
-        <button type="submit">{props.buttonText}</button>
+        <button type="submit" className="btn">{props.buttonText}</button>
       </form>
     </React.Fragment>
   );

@@ -142,7 +142,7 @@ class CoffeeControl extends React.Component {
       <React.Fragment>
         <main>
             {visibleComponent}
-            <button onClick={buttonHandler}>{buttonText}</button>
+            <button onClick={buttonHandler} className="main-btn btn">{buttonText}</button>
         </main>
       </React.Fragment>
     );

@@ -40,7 +40,6 @@ function Coffee(props) {
         </div>
         <div className="coffee-info">
           <h3>{props.origin} - {props.roast} Roast</h3>
-          {/* <h4>[{props.roast} Roast]</h4> */}
           <h3><span style={priceStyle}>${props.price}</span> / {quantity}</h3>
         </div>
       </div>

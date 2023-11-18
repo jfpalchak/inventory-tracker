@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 function CoffeeDetail(props) {
 
-  const { coffee, onClickingEdit, onClickingSell, onClickingDelete} = props;
+  const { coffee, onClickingEdit, onClickingSell, onClickingDelete } = props;
 
   let quantity = "Quantity: " + coffee.quantity + " lbs";
   let isOutOfStock = false;
@@ -27,12 +27,12 @@ function CoffeeDetail(props) {
         </div>
 
         <div className="sell-button">
-          <button onClick={onClickingSell} disabled={isOutOfStock}>Sell</button>
+          <button className="btn btn-sell" onClick={onClickingSell} disabled={isOutOfStock}>Sell</button>
         </div>
 
         <div className="crud-buttons">
-          <button onClick={onClickingEdit}>Edit</button>
-          <button onClick={onClickingDelete}>Remove</button>
+          <button className="btn btn-edit" onClick={onClickingEdit}>Edit</button>
+          <button className="btn btn-danger" onClick={onClickingDelete}>Remove</button>
         </div>
       </section>
     </React.Fragment>

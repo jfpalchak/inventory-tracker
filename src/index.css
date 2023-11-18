@@ -14,7 +14,9 @@ header {
   align-items: center;
   padding-left: 15px;
   padding-right: 15px;
+  padding-bottom: 10px;
   margin-bottom: 50px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
 
 .site-logo {
@@ -51,6 +53,46 @@ main {
   margin-right: 20px;
 }
 
+.btn {
+  margin-top: 25px;
+  padding: 1em;
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background: white;
+  font-weight: bold;
+  transition: 0.3s
+}
+.btn:hover:enabled {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  cursor: pointer;
+}
+.main-btn:hover {
+  background: black;
+  color: white;
+}
+.btn-danger:hover{
+  background-color: darkred;
+  color: white;
+}
+.btn-sell:hover:enabled {
+  background: black;
+  color: white;
+}
+.btn-sell {
+  border: 2px black solid;
+  box-shadow: none;
+}
+.btn-sell:disabled {
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.main-btn {
+  border: 2px black solid;
+  border-radius: 3px;
+  box-shadow: none;
+}
+
 /* COFFEE LIST STYLES */
 .coffee-item {
   position: relative;
@@ -59,17 +101,19 @@ main {
   width: clamp(250px, 25%, 300px);
   margin: 5px auto;
   transition: 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 15px 10px -10px;
 }
 
 .coffee-item:hover {
   transform: translateY(-1%);
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 .coffee-banner {
   position: relative;
   display: grid;
-  /* margin-bottom: 100px; */
 }
 
 .coffee-banner img {
@@ -77,22 +121,28 @@ main {
   z-index: -1;
   position: relative;
   border-radius: 5px;
+  /* border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px; */
   opacity: 0.85;
 }
 .coffee-banner h3 {
   position: absolute;
   padding-left: 5px;
-  top: -12px;
+  top: 10px;
   color: white;
   font-size: 3em;
 }
 
-/* .coffee-info {
-  font-style: italic;
-} */
-
 /* FORM COMPONENT STYLES */
+.form-component {
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
 .form-component h4 {
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -102,29 +152,36 @@ form {
   gap: 5px;
   margin-bottom: 15px;
 }
-label {
+form label {
   text-align: left;
+}
+form input {
+  border: none;
+  padding: 5px;
+  border-bottom: 1px solid black;
+  
 }
 form button {
   grid-column: 1 / 3;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 /* DETAIL COMPONENT STYLES */
 .selected-coffee {
   margin-bottom: 15px;
-  background: rosybrown;
   border-radius: 10px;
   padding: 15px;
+  width: 250px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 .sell-button button {
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
+  
 }
 .crud-buttons {
   display: flex;
   justify-content: space-between;
   gap: 5px;
 }
-
