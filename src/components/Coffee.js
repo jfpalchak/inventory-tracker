@@ -7,7 +7,7 @@ function Coffee(props) {
   
   // CSS Objects
   const outOfStockStyle = {
-    color: "red",
+    color: "darkred",
     fontWeight: "bold"
   };
 
@@ -17,13 +17,19 @@ function Coffee(props) {
     fontStyle: "italic"
   };
 
+  let priceStyle = {
+    color: "rgba(252,64,64,.7)"
+  };
+
   // Conditional Rendering
   let quantity = "In Stock";
 
   if (!props.quantity) {
     quantity = <span style={outOfStockStyle}>Out of Stock</span>;
+    priceStyle = { color: "gray", textDecorationLine: "line-through" }
   } else if (props.quantity <= 10) {
     quantity = <span style={almostEmptyStyle}>Almost Empty</span>;
+    priceStyle = { color: "darkorange" }
   }
 
   return (
@@ -34,10 +40,9 @@ function Coffee(props) {
           <h3>{props.name}</h3>
         </div>
         <div className="coffee-info">
-          <h4>{props.origin}</h4>
-          <h5>{props.roast}</h5>
-          <h5>${props.price}</h5>
-          <h5>{quantity}</h5>
+          <h3>{props.origin}</h3>
+          <h4>[{props.roast} Roast]</h4>
+          <h3><span style={priceStyle}>${props.price}</span> / {quantity}</h3>
         </div>
       </div>
     </React.Fragment>
