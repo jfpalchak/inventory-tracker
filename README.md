@@ -1,6 +1,6 @@
 # Coffee Inventory Tracker
 
-#### A React application that conditionally renders multiple components and implements full CRUD functionality.
+#### A single page application built with JavaScript and React components, implementing full CRUD functionality.
 
 #### By Joey Palchak
 
@@ -8,20 +8,22 @@
 
 - JavaScript
 - React
-- CSS
+- Node.js (v16.13.1)
+- npm (v8.1.2)
 - HTML
+- CSS
 
 ## Description
 
-Coffee Inventory Tracker is a React application that conditionally renders a number of different components: 
+This project is a single-page application built with React, using state management to implement CRUD functionality and conditionally render a number of different components: 
 * a list of different coffee beans, 
 * a form to add a new coffee bean to the list, 
 * a form to update or delete an existing coffee bean, 
-* as well as allow a user to sell a specific coffee bean, which updates that coffee's quantity count.
+* allow a user to sell/purchase a selected coffee bean and update that coffee's quantity.
 
 A coffee bean's quantity can only go as low as 0, at which point the product is listed as "Out of Stock".
 
-The initial diagram listing out the application's component tree can be found below:
+## Component Diagram
 
 <img src="https://github.com/jfpalchak/inventory-tracker/blob/main/src/img/inventory-diagram.drawio.png" alt="Application's component diagram." />
 
@@ -68,6 +70,7 @@ Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 ## Known Bugs
+
 * If any bugs are found, please contact the author.
 
 ## License
