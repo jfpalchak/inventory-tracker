@@ -23,6 +23,15 @@ This project is a single-page application built with React, using state manageme
 
 A coffee bean's quantity can only go as low as 0, at which point the product is listed as "Out of Stock".
 
+<img src="https://github.com/jfpalchak/inventory-tracker/blob/main/src/img/bean-list.png" alt="List of available coffee beans." />
+
+> Available coffee beans will display 'In Stock' beside their price, unless a coffee's quantity dips to 10lbs or lower, at which point a coffee will display 'Almost Empty', before displaying 'Out of Stock' when the quantity hits zero.
+
+Users can select any listed coffee, regardless of the bean being in stock, to display that coffee's detail card. It is here that a user can Buy/Sell, Edit, or Remove the selected Coffee. Should a user wish to Add a new coffee bean from the home page, they will be presented with a simple form to do so.
+
+<img src="https://github.com/jfpalchak/inventory-tracker/blob/main/src/img/bean-form.png" alt="Form to add or edit a coffee bean." />
+
+
 ## Component Diagram
 
 <img src="https://github.com/jfpalchak/inventory-tracker/blob/main/src/img/inventory-diagram.drawio.png" alt="Application's component diagram." />
