@@ -51,6 +51,7 @@ Coffee.propTypes = {
   name: PropTypes.string.isRequired,
   origin: PropTypes.string.isRequired,
   roast: PropTypes.string.isRequired,
+  notes: PropTypes.string,
   price: PropTypes.number.isRequired,
   quantity: PropTypes.number,
   id: PropTypes.string,

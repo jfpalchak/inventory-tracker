@@ -13,6 +13,7 @@ function EditCoffeeForm(props) {
       name: event.target.name.value,
       origin: event.target.origin.value,
       roast: event.target.roast.value,
+      notes: event.target.notes.value,
       price: parseFloat(event.target.price.value),
       quantity: coffee.quantity, // cannot be edited
       id: coffee.id // cannot be edited

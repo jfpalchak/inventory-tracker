@@ -30,6 +30,7 @@ function CoffeeDetail(props) {
           <h3>Name: {coffee.name}</h3>
           <h4>Origin: {coffee.origin}</h4>
           <h4>Roast: {coffee.roast}</h4>
+          <p><em>{coffee.notes}</em></p>
           <h4>Price: ${coffee.price.toFixed(2)} / lb</h4>
           <h4>{quantity}</h4>
         </div>

@@ -30,6 +30,13 @@ function ReusableForm(props) {
           placeholder="Enter roast of coffee."
           required={true}
         />
+        <label htmlFor="notes">Notes: </label>
+        <textarea 
+          type="textarea"
+          name="notes"
+          id="notes"
+          placeholder="Enter taste notes."
+        />
         <label htmlFor="price">Price: </label>
         <input 
           type="number"
