@@ -86,26 +86,6 @@ class CoffeeControl extends React.Component {
     });
   }
 
-  // handle selling the selected coffee and decrementing from the quantity
-  // update the mainInventory state with the updated coffee and it's new quantity
-  // handleSellingCoffee = () => {
-  //   const coffeeQuantity = this.state.currentCoffee.quantity;
-
-  //   const updatedCurrentCoffee = {
-  //     ...this.state.currentCoffee,
-  //     quantity: (coffeeQuantity === 0) ? 0 : coffeeQuantity - 1 // if quantity is 0, keep it at 0, otherwise decrement by 1
-  //   };
-
-  //   const updatedInventory = this.state.mainInventory
-  //     .filter(coffee => coffee.id !== this.state.currentCoffee.id)
-  //     .concat(updatedCurrentCoffee);
-
-  //   this.setState({
-  //     mainInventory: updatedInventory,
-  //     currentCoffee: updatedCurrentCoffee
-  //   });
-  // }
-
   render() {
 
     // Conditional Rendering
@@ -121,7 +101,6 @@ class CoffeeControl extends React.Component {
       buttonHandler = this.handleDetailClick;
     } else if (this.state.currentCoffee != null) {
       visibleComponent = <CoffeeDetail 
-                            // onClickingSell={this.handleSellingCoffee}
                             onClickingSell={this.handleUpdatingCoffee}
                             onClickingEdit={this.handleEditClick}
                             onClickingDelete={this.handleDeletingCoffee}
