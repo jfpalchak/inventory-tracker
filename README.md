@@ -1,4 +1,4 @@
-# <coffee /> Inventory Tracker
+# \<coffee /> Inventory Tracker
 
 #### A single page application built with JavaScript and React components, implementing full CRUD functionality.
 
