@@ -3,13 +3,12 @@ import CoffeeList from "./CoffeeList";
 import NewCoffeeForm from "./NewCoffeeForm";
 import CoffeeDetail from "./CoffeeDetail";
 import EditCoffeeForm from "./EditCoffeeForm"; 
-import { testData } from "./test-list";
 
 class CoffeeControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mainInventory: testData,
+      mainInventory: [],
       formVisible: false,
       editing: false,
       currentCoffee: null
