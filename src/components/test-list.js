@@ -3,7 +3,7 @@ export const testData = [
     name: "Cafe Saboroso",
     origin: "Brazil",
     roast: "Dark",
-    price: "13.40",
+    price: 13.40,
     quantity: 130,
     id: "1"
   },
@@ -11,7 +11,7 @@ export const testData = [
     name: "Worka Sakaro",
     origin: "Ethiopia",
     roast: "Medium",
-    price: "21.00",
+    price: 21.00,
     quantity: 130,
     id: "2"
   },
@@ -19,7 +19,7 @@ export const testData = [
     name: "La Primavera",
     origin: "Colombia",
     roast: "Dark",
-    price: "21.00",
+    price: 21.00,
     quantity: 130,
     id: "3"
   }

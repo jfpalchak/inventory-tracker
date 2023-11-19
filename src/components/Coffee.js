@@ -40,7 +40,7 @@ function Coffee(props) {
         </div>
         <div className="coffee-info">
           <h3>{props.origin} - {props.roast} Roast</h3>
-          <h3><span style={priceStyle}>${props.price}</span> / {quantity}</h3>
+          <h3><span style={priceStyle}>${props.price.toFixed(2)}</span> / {quantity}</h3>
         </div>
       </div>
     </React.Fragment>
@@ -51,7 +51,7 @@ Coffee.propTypes = {
   name: PropTypes.string.isRequired,
   origin: PropTypes.string.isRequired,
   roast: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   quantity: PropTypes.number,
   id: PropTypes.string,
   onCoffeeClick: PropTypes.func

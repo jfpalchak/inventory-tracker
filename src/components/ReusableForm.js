@@ -32,9 +32,11 @@ function ReusableForm(props) {
         />
         <label htmlFor="price">Price: </label>
         <input 
-          type="text"
+          type="number"
           name="price"
           id="price"
+          min="0"
+          step="0.01"
           placeholder="$ 0.00"
           required={true}
         />
