@@ -44,7 +44,7 @@ Should a user wish to Add a new coffee bean from the home page, they will be pre
 
 ## Component Diagram
 
-<img src="https://github.com/jfpalchak/inventory-tracker/blob/main/src/img/inventory-diagram.drawio.png" alt="Application's component diagram." />
+<img src="https://github.com/jfpalchak/inventory-tracker/blob/main/src/img/inventory-diagram-v2.drawio.png" alt="Application's component diagram." />
 
 
 ## Setup & Installation
