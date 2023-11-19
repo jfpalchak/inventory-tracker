@@ -14,7 +14,7 @@ export const testData = [
     roast: "Medium",
     notes: "Floral honeysuckle, bright and sweet pineapple and strawberry.",
     price: 21.00,
-    quantity: 130,
+    quantity: 10,
     id: "2"
   },
   {
@@ -23,7 +23,7 @@ export const testData = [
     roast: "Dark",
     notes: "Notes of sweet stone fruit, delicate green tea florality, and well rounded sweetness.",
     price: 21.00,
-    quantity: 130,
+    quantity: 0,
     id: "3"
   }
 ];
