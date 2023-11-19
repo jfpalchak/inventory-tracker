@@ -21,7 +21,7 @@ This project is a single-page application built with React, using state manageme
 * a form to update or delete an existing coffee bean, 
 * allow a user to sell/purchase a selected coffee bean and update that coffee's quantity.
 
-A coffee bean's quantity can only go as low as 0, at which point the product is listed as "Out of Stock".
+A coffee bean's quantity can only go as low as zero, at which point the product is listed as 'Out of Stock'.
 
 The application itself was designed with a focus on minimalism and ease of use.
 
@@ -33,7 +33,7 @@ Users can select any listed coffee, regardless of the bean being in stock, to di
 
 <img src="https://github.com/jfpalchak/inventory-tracker/blob/main/src/img/bean-detail-v2.png" alt="Form to add or edit a coffee bean." />
 
-> It is here that a user can Sell/Buy, Edit, or Remove the selected Coffee from the inventory. 
+> It is here that a user can Sell/Buy, Edit, or Remove the selected Coffee from the inventory. If the selected Coffee is listed as out of stock, the 'Sell' button will be disabled.
 
 Should a user wish to Add a new coffee bean from the home page, they will be presented with a simple form to do so:
 
