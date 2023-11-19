@@ -51,6 +51,10 @@ $ npm install
 ```bash
 $ npm run start
 ```
+### Alternatively
+
+1. Access the application directly via gh-pages at https://jfpalchak.github.io/inventory-tracker/.
+
 
 ## Available Scripts
 
